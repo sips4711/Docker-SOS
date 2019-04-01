@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    image: httpd
+    ports:
+      - "8080:80"
+    volumes:
+       - ~/myLocalSyncFolder/:/source/
+       - target:/usr/local/apache2/htdocs/ 
+  sos-sync:
+    build: .
+    image: docker-sos
+    volumes:
+       - ~/myLocalSyncFolder/:/source/
+       - target:/target/
+volumes:
+  target:
