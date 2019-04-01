@@ -59,8 +59,7 @@ services:
        - ~/myLocalSyncFolder/:/source/
        - target:/usr/local/apache2/htdocs/ 
   sos-sync:
-    build: .
-    image: docker-sos
+    image: sebastianzoll/docker-sos
     volumes:
        - ~/myLocalSyncFolder/:/source/
        - target:/usr/local/apache2/htdocs/
