@@ -13,6 +13,12 @@ We've been playing with [eZ Systems](https://ez.no/de) and realized, that loadin
 # HOW IT WORKS
 Docker-SOS listens on a mounted folder on your laptop. As soon theres a change on the source folder, the change will by synced to the target volume. Noting fancy here. Just an inotify listener on /source/ that triggers rsync to mirror the changes to /target. 
 
+---
+**NOTE**
+
+This is a one way sync from source to target. The idea behind that is to to use a docker volume for your data (instead o a mounted volume). The volume is used to bypass the docker overlay bottleneck.
+
+---
 
 # QUICKSTART
 ```
